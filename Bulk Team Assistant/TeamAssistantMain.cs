@@ -22,6 +22,9 @@ namespace Bulk_Team_Assistant
 
         private static bool usersSelected = false;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamAssistantMain"/> class.
+        /// </summary>
         public TeamAssistantMain()
         {
             InitializeComponent();
@@ -29,6 +32,18 @@ namespace Bulk_Team_Assistant
             comboBoxUsersViews.SelectedIndex = 0;
         }
 
+
+        /// <summary>
+        /// Gets the plugin logo.
+        /// </summary>
+        /// <value>
+        /// The plugin logo.
+        /// </value>
+        public override Image PluginLogo
+        {
+
+            get { return Bulk_Team_Assistant.Properties.Resources.Logo; }
+        }
 
         /// <summary>
         /// Closings the plugin.
@@ -133,8 +148,7 @@ namespace Bulk_Team_Assistant
         /// </summary>
         private void ProcessAddSelectedUsersToTeams()
         {
-            //sorting https://github.com/MscrmTools/XrmToolBox/blob/41f2aa8ffa5e7f0cee3ecabe40d4f6da3438f18a/Plugins/MsCrmTools.UserRolesManager/UserControls/RoleSelector.cs
-
+           
             WorkAsync("Adding selected users to selected teams(s)...",
                (bw, evt) =>
                {
@@ -248,16 +262,31 @@ namespace Bulk_Team_Assistant
 
 
 
+        /// <summary>
+        /// Handles the ItemChecked event of the userslistView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ItemCheckedEventArgs"/> instance containing the event data.</param>
         private void userslistView_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             lblSelectedUsers.Text = string.Format("{0} Selected  user(s)", listViewUsers.CheckedItems.Count);
         }
 
+        /// <summary>
+        /// Handles the ItemChecked event of the listViewTeams control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ItemCheckedEventArgs"/> instance containing the event data.</param>
         private void listViewTeams_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             lblSelectedTeams.Text = string.Format("{0} Selected  team(s)", listViewTeams.CheckedItems.Count);
         }
 
+        /// <summary>
+        /// Handles the KeyDown event of the listViewUsers control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="KeyEventArgs"/> instance containing the event data.</param>
         private void listViewUsers_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.A && e.Control)

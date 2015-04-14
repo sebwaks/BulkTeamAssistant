@@ -31,16 +31,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Crm.Sdk.Proxy">
-      <HintPath>..\Lib\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <HintPath>lib\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xrm.Client">
-      <HintPath>..\Lib\Microsoft.Xrm.Client.dll</HintPath>
+      <HintPath>lib\Microsoft.Xrm.Client.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xrm.Sdk">
-      <HintPath>..\Lib\Microsoft.Xrm.Sdk.dll</HintPath>
+      <HintPath>lib\Microsoft.Xrm.Sdk.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xrm.Sdk.Deployment">
-      <HintPath>..\Lib\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+      <HintPath>lib\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,7 +54,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="XrmToolBox">
-      <HintPath>..\Lib\XrmToolBox.exe</HintPath>
+      <HintPath>lib\XrmToolBox.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Command-Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
